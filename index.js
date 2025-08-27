@@ -80,7 +80,8 @@ async function checkNewVideo(chatId = null) {
     const latest = await getLatestVideo();
     console.log("Latest video:", latest);
 
-    if (latest.id !== lastVideoId && latest.title.includes("//አራዳ ቅዳሜ//")) {
+    if (latest.id !== lastVideoId) {
+      //&& latest.title.includes("//አራዳ ቅዳሜ//")
       if (chatId) {
         await bot.sendMessage(
           chatId,
